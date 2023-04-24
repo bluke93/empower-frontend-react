@@ -1,3 +1,5 @@
+import "../assets/scss/pages/index.scss"
+
 function Index() {
   return (
     <>

@@ -1,0 +1,25 @@
+@use "../variables" as v;
+
+.sidebar {
+  background: v.$bg-color;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  color: #4c4c4c;
+
+  .link {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    margin: 5px 0;
+
+    &:hover,
+    &:active {
+      color: #1d1d1d;
+    }
+  }
+}

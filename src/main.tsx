@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import DefaultLayout from './layouts/default.tsx'
+import Base from './layouts/Base.tsx'
 import Index from './pages/index.tsx'
 import About from './pages/about.tsx'
+
+import './assets/scss/main.scss'
 
 import {
   BrowserRouter,
@@ -15,8 +17,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route element={<DefaultLayout/>}>
-          <Route path="index" index element={<Index />} />
+        <Route element={<Base />}>
+          <Route index element={<Index />} />
           <Route path="about" element={<About />} />
         </Route>
       </Routes>
