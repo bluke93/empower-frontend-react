@@ -1,26 +1,51 @@
 import '../assets/scss/components/Sidebar.scss'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const SidebarLinks = [
-  { path: '/', name: "dashboard", icon: 'cellular' },
-  { path: '/course', name: "course", icon: 'school-outline' },
-  { path: '/activities', name: "activities", icon: 'journal-outline' },
-  { path: '/results', name: "results", icon: 'bookmarks-outline' },
-  { path: '/calendar', name: "calendar", icon: 'calendar-outline' },
-  { path: '/resources', name: "resources", icon: 'library-outline' },
-  { path: '/forum', name: "forum", icon: 'chatbubbles-outline' },
+const menuTop = [
+  { path: "/", text: "dashboard", icon: 'cellular' },
+  { path: "/courses", text: "courses", icon: 'school-outline' },
+  { path: "/activities", text: "activities", icon: 'journal-outline' },
+  { path: "/results", text: "results", icon: 'bookmarks-outline'},
+  { path: "/calendar", text: "calendar", icon: 'calendar-outline'},
+  { path: "/resources", text: "resources", icon: 'library-outline'},
+  { path: "/forum", text: "forum", icon: 'chatbubbles-outline' }
+]
+
+const menuBottom = [
+  { path: "/support", text: "Support", icon: "help-buoy-outline" },
+  { path: "/settings", text: "Settings", icon: "cog-outline" },
+  { path: "/logout", text: "Logout", icon: "exit-outline" },
 ]
 
 function Sidebar() {
   return (
     <>
       <nav className='sidebar'>
-        {SidebarLinks.map((link, index) => {
-          return <Link to={link.path} className='link' key={index}>{link.name}</Link>
-        })}
+        <div className='logo'>
+          EMPOWER
+        </div>
+        <div className='menu top'>
+          {renderMenu(menuTop)}
+        </div>
+        <div className='menu bottom'>
+          {renderMenu(menuBottom)}
+        </div>
       </nav>
     </>
   )
+}
+
+function renderMenu(menu: Array<INavLink>){
+  return menu.map((link: INavLink, index: number) => {
+    return (
+      <>
+      
+        <NavLink to={link.path} className='link' key={index}>
+          <ion-icon class="icon" icon={link.icon} key={index}/>{link.text}
+        </NavLink>
+      </>
+    )
+  })
 }
 
 export default Sidebar

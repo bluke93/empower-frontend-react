@@ -1,25 +1,73 @@
 @use "../variables" as v;
 
 .sidebar {
-  background: v.$bg-color;
-  padding: 20px;
+  background: v.$elements-bg-color;
+  padding: 20px 0;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
   border-right: 1px solid rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  color: #4c4c4c;
+  color: v.$primary-text-color;
+  z-index: 1;
 
-  .link {
+  .logo {
+    padding: 20px;
+    letter-spacing: 0.1em;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #6989f4 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: top;
     font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-    margin: 5px 0;
+    font-family: 'Fredoka', sans-serif;
+  }
 
-    &:hover,
-    &:active {
-      color: #1d1d1d;
+  .menu {
+    display: flex;
+    flex-direction: column;
+
+    &.top {
+      flex: 1;
+    }
+  
+    .link {
+      display: flex;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      padding: 5px 20px;
+      text-transform: capitalize;
+      align-items: center;
+      color: v.$link-color;
+      font-weight: 400;
+      transition: all 0.2s ease-in-out;
+
+      .icon {
+        font-size: 26px;
+        text-align: left;
+        width: 30px;
+        margin-right: 5px;
+        text-align: left;
+      }
+  
+      &:hover {
+        background-color: #f1f1f1;
+        color: v.$link-color-hover;
+      }
+
+      &.active,
+      &.active:hover {
+        font-weight: 700;
+        background-color: #f1f1f1;
+        color: v.$active-link-color;
+        border-right: 5px solid v.$primary-color;
+        .icon {
+          color: v.$primary-color;
+        }
+      }
     }
   }
 }

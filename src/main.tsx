@@ -19,7 +19,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <Routes>
         <Route element={<Base />}>
           <Route index element={<Index />} />
-          <Route path="about" element={<About />} />
+          <Route path="/courses" element={<Index />} />
+          <Route path="/activities" element={<Index />} />
+          <Route path="/results" element={<Index />} />
+          <Route path="/calendar" element={<Index />} />
+          <Route path="/resources" element={<Index />} />
+          <Route path="/forum" element={<Index />} />
+          <Route path="/support" element={<Index />} />
+          <Route path="/settings" element={<Index />} />
         </Route>
       </Routes>
     </BrowserRouter>
