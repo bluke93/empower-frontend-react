@@ -2,9 +2,8 @@
 
 .sidebar {
   background: v.$elements-bg-color;
-  padding: 20px 0;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   border-right: 1px solid rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
@@ -12,7 +11,7 @@
   z-index: 1;
 
   .logo {
-    padding: 20px;
+    padding: 0.9em;
     letter-spacing: 0.1em;
     font-size: 1.75rem;
     text-transform: uppercase;
@@ -35,10 +34,10 @@
   
     .link {
       display: flex;
-      font-size: 16px;
+      font-size: 1em;
       letter-spacing: 0.1em;
       text-decoration: none;
-      padding: 5px 20px;
+      padding: 0.6em 1em;
       text-transform: capitalize;
       align-items: center;
       color: v.$link-color;
@@ -46,9 +45,9 @@
       transition: all 0.2s ease-in-out;
 
       .icon {
-        font-size: 26px;
+        font-size: 1.7em;
         text-align: left;
-        width: 30px;
+        width: 1.5em;
         margin-right: 5px;
         text-align: left;
       }
@@ -69,5 +68,6 @@
         }
       }
     }
+
   }
 }
